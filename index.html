@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta name="author" content="Borja Bas Ventín">
+    <meta name="keywords" content="diseño, desarrollo, web,developer, CMS, SQL, javascript, js, sysadmin, Ponferrada redes, sistemas, html, css, servidor, bases de datos, app, wordpress Ponferrada, Bierzo, España">
+    <meta name="description" content="Blog de informática especializado principalmente en el diseño y desarrollo web desde Ponferrada. Anímate y accede.">
+    <meta charset="UTF-8">
+    <meta name="copyright" content="© 2022">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="robots" content="all">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#a3ccdc">
+    <meta name="apple-mobile-web-app-status-bar-style" content="#a3ccdc">
+    <meta name="msapplication-navbutton-color" content="#a3ccdc">
+    <title>Borja Bas Ventín: Diseñador y desarrollador web desde Ponferrada</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js" type="text/javascript"></script> 
+    <link rel="stylesheet" href="/me/assets/css/opensans.css">
+    <link rel="stylesheet" href="/me/assets/css/styles.css">
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-TNFH1FGXVX"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-TNFH1FGXVX');
+    </script>
+</head>
+<body>
+    <header id="header">
+        <nav class="container-fluid">
+        <a href="#" class="logo"><img  src="/me/assets/img/logo-50.png"> </a>     
+           <ul class="nav-main-top">
+                <li class="nav-main-top-item"><a href="#body-container" class="nav-main-top-link">sobre mí</a></li>
+                <li class="nav-main-top-item"><a href="#body-portfolio" class="nav-main-top-link">portfolio</a></li>
+                <!-- class="nav-main-top-item"><a href="http://www.borjabasventin.com/me/blog" class="nav-main-top-link">blog</a></li-->
+            </ul>
+            <!-- Toggle con Hamburguesa (code &#9776;) -->
+            <button class="toggle">
+                <span class="icon">
+                <div class="burguer" id="burguer" onclick="cross()"> 
+                    <div class="lineOne"></div>
+                    <div class="lineTwo"></div>
+                    <div class="lineThree"></div>
+                </div>
+            <!--&#9776;--></span>
+            </button>
+            <script type="text/javascript">
+                // 2.- HAMBURGUER
+                let burguer = document.getElementById("burguer");
+                // Cross function to make  main type change
+                function cross(){
+                    burguer.classList.toggle("change");
+                }   
+                // 3.-  MAIN MENU
+                const toggle = document.querySelector(".toggle");
+                const nav = document.querySelector(".nav-main-top");
+                toggle.addEventListener('click',()=>{
+                    nav.classList.toggle('nav-main-visible');
+                },true);       
+                </script>
+        </nav>
+    </header>    
+    <div id="body-container">
+        <h1 class="title-me"></h1>
+        <div class="left-home">
+            <div class="draw">
+                <img src="/me/assets/img/webBBV.png"  alt="Dibujo vectorial de Borja Bas Ventín" class="image" title="Este soy yo">
+            </div>
+        </div>
+        <div class="right-home">
+            <div class="text-home">
+                <h1 class="about-me">Sobre mí</h1>
+                <h2 class="sub-me">Diseñador y desarrollador web</h2>
+                    <div class="text-about-me">
+                        <p>¡Hola!, me llamo Borja, soy un entusiasta del mundo digital, me encanta la tecnología y la informática. Una afición que realmente me acompaña desde muy joven.</p>    
+                        
+                        <p>Siempre tuve claro que además de ser un hobby quería poder dedicarme a ello, así que además de centrarme en ir aprendiendo poco a poco 
+                        a mi ritmo, me formé académicamente en varias áreas, como fueron la electrónica (para poder comprender el funcionamiento del hardware),
+                        la administración de sistemas y redes (para poder conocer como se interrelacionan los datos entre clientes y servidores) y el desarrollo
+                        de aplicaciones (para poder ser capaz de "construir" algo desde cero).</p>
+                        
+                        <p>Dentro del desarrollo de aplicaciones, me especialicé en el mundo web, tanto en diseño como en desarollo,  ya que además de ofrecer
+                        un amplío abanico de posibilidades posee una parte visual muy importante que me atrajó desde la
+                        primera vez que navegué por internet.</p>
+                    </div>
+                    <!-- call modal window -->
+                    <!--a href="#open-popup" class="btn-contact" title="Formulario de contacto web. Contacta conmigo.">Contactar</a-->
+                    <!-- modal window or pop-up -->
+                    <div id="open-popup" class="window-popup">
+                        <div id="window-container">
+                            <div id="close"><a href="#close" class="close">cerrar</a></div>
+                            <div id="content">
+                            <h2>Contacto</h2>
+                            <p>Si quiere poder contactar conmigo puede usar este formulario habilitado para tal fin.
+                                No dude en utilizarlo. Contacte conmigo
+                            </p>
+                            <form  id="contact-form" action="<?php echo htmlentities($_SERVER['PHP_SELF']); ?>" method="post">
+                                <label for="email">Email</label>
+                                <p><input type="email" name="email" id="email" placeholder="Su e-mail" required></p>
+                                <label for="consulta">Motivo de la consulta</label>
+                                <p><textarea name="consulta" id="consulta"></textarea></p>    
+                                <p class="centerText">He leído y acepto la <b><a onClick="showHidden('legal-div')" title="condiciones legales para poder enviar el formulario">política de privacidad</a></b> <input type="checkbox" name="conditions" value="Si, acepto la política de privacidad" required></p><br>
+                                <p><input type="submit" class="btn-login" name="enviar" value="Envíar"></p>
+                            </form>  
+                                <?php
+                                    if (isset($_POST['enviar'])){
+                                        $myEmail="bascore_@hotmail.com";
+                                        $email = $_POST['email'];
+                                        $consulta = $_POST['consulta'];
+                                        $mensaje="Remitente: $email, Asunto: $consulta";
+                                        $headers .= "Content-type:text/html;charset=UTF-8" . "\r\n";
+                                        mail($myEmail,"Formulario de la web borjabasventin.com", $mensaje, $headers);
+                                        echo '<script type="text/javascript">alert("Mensaje enviado correctamente. Le responderé con la mayor celeridad posible. Muchas gracias por contactar.");</script>';
+                                        header("Refresh:0;");                               
+                                    }
+                                ?>
+                                <div id="legal-div">
+                                    <h3 class="title-legal">Información Legal</h3>
+                                    <p>borjabasventin.com le informa que los datos de caracter personal proporcionados,
+                                    en este caso su dirección de email, serán tratado por Borja Bas Ventín.</p>
+
+                                    <p>La finalidad del tratamiento de los datos proporcionados (email) será
+                                    para dar respuesta a la consulta realizada por usted.</p>
+
+                                    <p>La legitimación provendrá de la confirmación en el checkbox por parte del interesado, requisito
+                                    que es necesario e indispensable para poder realizar el envío del formulario.</p>
+
+                                    <p>Usted en cualquier momento es libre de ejercer sus derechos de acceso, rectificación o 
+                                    supresión de los datos proporcionados.</p>        
+                                </div>
+                            </div>
+                        </div>                
+                    </div>
+                    <!-- end modal -->
+            <div class="clear"></div>
+        </div><!-- end text-home -->
+    </div> <!-- end right -->
+<div class="clear"></div> 
+</div><!-- end body container --> 
+<div id="body-portfolio">
+    <h1 class="title-port">Portfolio</h1>
+    <div class="left container-fluid">
+<!------------------------ start window project 01: IO Systems ---------------------->    
+        <div class="window">
+            <div class="browser-bar">  
+                <div class="container-bar">
+                    <div class="circles">
+                        <div class="circle red"></div>
+                        <div class="circle yellow"></div>
+                        <div class="circle green"></div>
+                    </div>
+                    <div class="project-name-portfolio">Proyecto: IO Systems </div>
+                </div>     
+            </div>
+            <div class="portfolio-container">  
+                <div class="small-image"><img src="/me/assets/img/IO_01.png"></div>
+                <div class="portfolio-mask">
+                    <p><h2><span class="bg-mask">IO Systems Website</span></h2></p> 
+                    <p class="space-mask"> <span class="bg-mask">HTML, CSS, JS, Php, Wordpress, JQuery</p></p>
+                    <!-- call modal window -->
+                    <p><a href="#open-popup-01" class="link bg-mask" title="Información del proyecto">+ info</a></p>
+                </div>    
+                <!-- modal window or pop-up -->
+                <div id="open-popup-01" class="window-popup">
+                    <div id="window-container-portfolio">
+                        <div id="close"><a href="#close" class="close">cerrar</a></div>
+                        <div id="content">
+                            <h2 class="format">IO Systems</h2>
+                            <p class="text-project">
+                                IO Systems es un proyecto centrado en una empresa del ámbito tecnológico.
+                            </p>
+                                <div class="bar">
+                                    <div class="container-bar">
+                                        <div class="circles">
+                                            <div class="circle red"></div>
+                                            <div class="circle yellow"></div>
+                                            <div class="circle green"></div>
+                                        </div>
+                                        <div class="project-name">Proyecto: IO Systems </div>
+                                    </div>
+                                </div>
+                                <img src="/me/assets/img/IO_01.png" alt="Imágen de la web de IO Systems">
+                        
+                            <p class="text-project">                            
+                                <h3 class="format">Estructura del desarrollo</h3>
+                                <ul class="tech-list">
+                                    <li>Slider a pantalla completa como introducción</li>
+                                    <li>Página web estilo SPA con navegación smooth scrolling</li>
+                                    <li>Blog mediante CMS Wordpress</li>
+                                </ul>
+                            </p>
+                    
+                            <p class="text-project">
+                                <h3 class="format">Tecnologías usadas</h3>
+                                <ul class="tech-list">
+                                    <li>HTML 5</li>
+                                    <li>CSS 3</li>
+                                    <li>Php</li>
+                                    <li>Javascript</li>
+                                    <li>JQuery</li>
+                                    <li>Wordpress</li>
+                                </ul>
+                            </p>
+                            <p class="text-project">
+                                <a href="assets/img/IO_full.png" target="_new"><input type="button" value="Captura"  title="Ver un screenshoot de la web principal" class="btn-project"></a>
+                            </p>         
+                        </div><!-- end content -->
+                    </div>  <!-- end window-container -->              
+                </div><!-- end modal -->
+            </div> <!-- end portfolio container -->   
+        </div><!-- end window -->
+<!------------------------ end window project 01  ----------------------->
+    </div> <!-- end left -->
+    <div class="right container-fluid" >
+<!------------------------ start window project 02: Traveling world tours ---------------------->    
+    <div class="window">
+        <div class="browser-bar">  
+            <div class="container-bar">
+                <div class="circles">
+                    <div class="circle red"></div>
+                    <div class="circle yellow"></div>
+                    <div class="circle green"></div>
+                </div>
+                <div class="project-name-portfolio">Proyecto: Agencia TWT </div>
+            </div>     
+        </div>
+        <div class="portfolio-container"> 
+            <div class="small-image"><img src="/me/assets/img/TWT.png"></div>
+            <div class="portfolio-mask">
+                    <p><h2><span class="bg-mask">Traveling World Tour</span></h2></p> 
+                    <p class="space-mask"> <span class="bg-mask">HTML, CSS, JS, JQuery, Php, Wordpress, Woocommerce </p></p>
+                    <!-- call modal window -->
+                    <p><a href="#open-popup-02" class="link bg-mask" title="Información del proyecto">+ info</a></p>
+            </div>    
+            <!-- modal window or pop-up -->
+            <div id="open-popup-02" class="window-popup">
+                <div id="window-container-portfolio">
+                    <div id="close"><a href="#close" class="close">cerrar</a></div>
+                    <div id="content">
+                        <h2 class="format">Traveling world tours</h2>
+                        <p class="text-project">
+                            TWT es un proyecto centrado en una empresa dedicada a la promoción y organización de viajes a Santo Tomé y Príncipe..
+                        </p>
+                            <div class="bar">
+                                <div class="container-bar">
+                                    <div class="circles">
+                                        <div class="circle red"></div>
+                                        <div class="circle yellow"></div>
+                                        <div class="circle green"></div>
+                                    </div>
+                                    <div class="project-name">Proyecto: Agencia TWT </div>
+                                </div>
+                            </div>
+                            <img src="/me/assets/img/TWT.png" alt="Imágen de la web de Traveling World Tours">
+                    
+                        <p class="text-project">                            
+                            <h3 class="format">Estructura del desarrollo</h3>
+                            <ul class="tech-list">
+                                <li>Página web implementada a través de un theme propio para CMS</li>
+                                <li>Blog mediante CMS Wordpress</li>
+                                <li>Contratación de los paquetes ofertados a través de un theme desarrollado para Woocommerce</li>
+                            </ul>
+                        </p>
+                
+                        <p class="text-project">
+                            <h3 class="format">Tecnologías usadas</h3>
+                            <ul class="tech-list">
+                                <li>HTML 5</li>
+                                <li>CSS 3</li>
+                                <li>Php</li>
+                                <li>Javascript</li>
+                                <li>JQuery</li>
+                                <li>Wordpress</li>
+                                <li>Woocommerce</li>
+                            </ul>
+                        </p>
+                        <p class="text-project">
+                            <a href="assets/img/TWT_full.png" target="_new"><input type="button" value="Captura"  title="Ver un screenshoot de la web principal" class="btn-project"></a>
+                        </p>         
+                    </div>
+                </div> <!-- end window-container -->               
+            </div><!-- end modal -->                  
+        </div><!-- end portfolio-container -->
+    </div> <!-- end window -->   
+</div><!-- end right -->
+<!------------------------ end window project 02  ----------------------->       
+<div class="clear"></div>
+    <div id="more-portfolio">Más proyectos en breve</div>
+</div><!-- end body container --> 
+<footer></footer>
+</div> <!-- end wrapper --> 
+<script type="text/javascript" >
+//========================================================================================
+//                      MOSTRAR/OCULTAR MENÚ RESPONSIVO MÓVIL
+//========================================================================================
+            function showHidden(argument){
+                // argument es el nombre del div (#)
+                if (document.getElementById){ 
+                    let  x= document.getElementById(argument); 
+                        x.style.display = (x.style.display == 'none') ? 'block' : 'none'; 
+                    }
+                }
+    // Llamada para evitar un "bug"
+    window.addEventListener('DOMContentLoaded', showHidden('legal-div'));
+//========================================================================================
+//                       CAPTURA ENLACES DE MÉNU MÓVIL
+//========================================================================================
+const anclas = document.getElementsByClassName("nav-main-top-link"); 
+const arrayAnclas=Array.from(anclas);
+ 	arrayAnclas.forEach((element,index) => {
+    		element.addEventListener('click', (event) => {
+     	 		event.preventDefault(); 
+                // Capturar el href  
+      			let eventoCapturado = event.currentTarget.getAttribute('href');
+      			console.log(index);
+                console.log(eventoCapturado);
+				//document.querySelector(eventoCapturado)
+                if (eventoCapturado){
+                    document.querySelector(eventoCapturado).scrollIntoView({
+                        behavior: "smooth",
+                        block: "start",
+                        inline: "nearest"
+				     });
+                    // Cerrar 
+                    cross();
+                    const cerrarResponsivo = document.querySelector(".nav-main-top");
+                    cerrarResponsivo.classList.toggle('nav-main-visible');
+                    }
+   	 });
+  });
+</script>
+</body>
+</html>
+</body>
+</html>
