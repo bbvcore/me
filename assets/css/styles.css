@@ -133,7 +133,7 @@ a:active.logo{text-decoration:none; color:white;}
     position:fixed;
     left:-100%; /* Ocultar menÃº*/
     top:60px;
-    background:#44454b;
+    background:#3F434E;
     align-items:center;
     padding:20px 0;
     height:calc(100% - 60px);
