@@ -13,10 +13,10 @@ html {
     scroll-behavior: smooth;
   }
 :root{
-    /*--bg-bar:#45444b;*/
+    /*--bg-bar:#3F434E;*/
     --bg-bar:#3F434E;
     --full:100%;
-    /*--bg-body:#45444b;*/
+    /*--bg-body:#3F434E;*/
     --bg-body:#3F434E;
     --bg-footer:#222;
 }
@@ -278,7 +278,7 @@ a:active.logo{text-decoration:none; color:white;}
     padding:.5rem 0 .5rem 1rem;
     background-color:#a3ccdc;
     border:2px solid #000;
-    -webkit-text-stroke-color:#45444b;
+    -webkit-text-stroke-color:#3F434E;
     -webkit-text-stroke-width:.1rem;
     -webkit-text-fill-color:#f3f3f3;
     border-radius:5px;
@@ -292,7 +292,7 @@ a:active.logo{text-decoration:none; color:white;}
     border-radius:5px;
     background:#d3d3d3;
     border:2px solid #000;
-    -webkit-text-stroke-color:#45444b;
+    -webkit-text-stroke-color:#3F434E;
     -webkit-text-stroke-width:.1rem;
     -webkit-text-fill-color:#f3f3f3;
 
@@ -576,7 +576,7 @@ h1.title-me{
     margin-right:1rem;
 }
 .btn-project:hover{
-    background:#45444b;
+    background:#3F434E;
     color:#a3ccdc;
 }
 
