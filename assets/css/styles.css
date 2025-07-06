@@ -15,7 +15,8 @@ html {
 :root{
     --bg-bar:#45444b;
     --full:100%;
-    --bg-body:#45444b;
+    /*--bg-body:#45444b;*/
+    --bg-body:#3F434E;
     --bg-footer:#222;
 }
 @font-face {
