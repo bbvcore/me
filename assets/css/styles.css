@@ -13,7 +13,8 @@ html {
     scroll-behavior: smooth;
   }
 :root{
-    --bg-bar:#45444b;
+    /*--bg-bar:#45444b;*/
+    --bg-bar:#3F434E;
     --full:100%;
     /*--bg-body:#45444b;*/
     --bg-body:#3F434E;
