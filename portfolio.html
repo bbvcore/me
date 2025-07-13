@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Borja Bas Ventín">
+    <meta name="copyright" content="Borja Bas Ventín">
+    <link rel="stylesheet" href="assets/css/portfolio-responsive.css">
+    <link rel="stylesheet" href="assets/css/portfolio-structure.css">
+    <title>Portfolio</title>
+</head>
+<body>
+    <div id="navigation">
+        <div class="navigation-center">
+            <div class="sub-container">
+                <div class="left portfolio-logo"> Portfolio</div>
+                <div class="right"></div>
+            </div>
+        </div>
+    </div>
+    <!-- Barra lateral con enlaces -->
+    <div class="controls" id="controls">
+        <a href="#section-wp"><img class="bbv-controls" src="https://bbvcore.github.io/me/assets/img/logo-50.png"></a>
+        <a href="#section-home">Home</a>
+        <a href="#section-portfolio">Portfolio</a>
+        <a href="#section-contact">Contacto</a>
+    </div>
+    <!-- Pestaña del menú controls -->
+    <div class="tab-controls" id="tab-controls">←</div>
+    <script type="text/javascript">
+        const controls = document.getElementById('controls');
+        const tab = document.getElementById('tab-controls');
+        tab.addEventListener('click', () => {
+            if (controls.style.transform === 'translateX(0px)') {
+                controls.style.transform = 'translateX(-100%)';
+                tab.innerHTML = '→';
+            } else {
+                controls.style.transform = 'translateX(0)';
+                tab.innerHTML = '←';
+            }
+        });
+    </script>
+    <div id="wrapper">
+        <nav class="row"></nav>
+        <header class="row slider">
+            <!-- Contenedor para aplicar el positting de las arrows-->
+            <div class="slides"><!-- Contenedor para conseguir la colección de imágenes -->
+                <div class="slide">
+                    <div class="container-slide">
+                        <div class="slide-left">
+                            <h2 class="title-slider">
+                                <img src="assets/img/js.png">
+                            </h2>
+                        </div>
+                        <div class="slide-right">
+                            <b>Javascript</b> es el principal y más usado <i>lenguaje de programación del lado cliente</i>, además
+                            esta en constante evolución y permite realizar aplicaciones completas como lenguaje base, tanto en el <b>backend</b> como en el
+                            <b>frontend</b>. Además, también posee una amplia gama de <b>librerías</b> y <b>frameworks</b> para permitir gestionar mejor la modularidad y
+                            escalabilidad.
+                        </div>
+                    </div>
+                </div>
+                <div class="slide">
+                    <div class="container-slide">
+                        <div class="slide-left">
+                            <h2 class="title-slider">
+                                <img src="assets/img/php.png">
+                            </h2>
+                        </div>
+                        <div class="slide-right">
+                            <b>Php</b> es el principal <i>lenguaje de programación de lado del servidor</i> en la web, hay otras
+                            alternativas como puede ser usar <b>Java, C#, python</b> o incluso <b>Javascript</b> a través del uso de <b>NodeJS</b>,
+                            aún así sigue siendo el lenguaje de <b>backend</b> con más penetración en la red de redes y parte fundamental de la misma desde los 90.
+                            Además ha evolucionado adaptándose a los nuevos tiempo y también se han desarrollado <b>sistemas de plantillas, CMS</b> o <b>Frameworks</b>
+                            que permiten expandir su influencia en la red y en las aplicaciones.
+                        </div>
+                    </div>
+                </div>
+                <div class="slide">
+                    <div class="container-slide">
+                        <div class="slide-left">
+                            <h2 class="title-slider">
+                                <img src="assets/img/wordpress.png">
+                            </h2>
+                        </div>
+                        <div class="slide-right">
+                            <b>Wordpress</b> se trata de un <b>CMS</b>, sistema de gestión de contenidos, construido con <i>base en Php</i> y
+                            que goza de una envidiable difusión. Este CMS se utilizaba inicialmente como <b>blog</b>, pero es mucho más, permite construir
+                            aplicaciones web complejas además de ofrecer la posibilidad crear con facilidad mediante el uso de Woocommerce plataformas de comercio
+                            online. Entre los principales usuarios de este <b>CMS</b> a nivel global destacan varios como son <i>BBC America, la universidad de Harvard, Sony
+                            music, Disney (tienda online), Mercedes o Microsoft News</i>.
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Controles del Slider -->
+            <button class="arrow arrow-left">&#10094;</button>
+            <button class="arrow arrow-right">&#10095;</button>
+
+
+            <script type="text/javascript">
+                // Capturar
+                const slides = document.querySelector('.slides');
+                const slide = document.querySelectorAll('.slide');
+                const prev = document.querySelector('.arrow.arrow-left');
+                const next = document.querySelector('.arrow.arrow-right');
+
+                let currentIndex = 0;
+                const total = slide.length;
+                const slideWidth = 100; // Tamaño de cada slide para el calculo en la función show()
+
+                // Muestra el Slide seleccionado acorde al parámetro index (posición en la colección)
+                const show = (index) => {
+                    // Desplaza en el contenedor slides flexbox el número de pixeles necesarios para mostrar el slide necesario
+                    slides.style.transform = `translateX(-${index * slideWidth}%)`; // Operación de calculo de la posición y asignación a la propiedad CSS
+                }
+
+                const nextSlide = () => {
+                    currentIndex = (currentIndex + 1) % total; // El módulo nos da la posición, usamos el resto, se podría usar también la división, pero haría falta controlar la iteración, tanto por arriba como por abajo con un if, es más código
+                    show(currentIndex);
+                }
+
+                const prevSlide = () => {
+                    currentIndex = (currentIndex - 1 + total) % total; // El módulo nos da la posición, usamos el resto
+                    show(currentIndex);
+                }
+
+                // Listeners
+                next.addEventListener('click', nextSlide);
+                prev.addEventListener('click', prevSlide);
+
+                // Carga automática del Slide
+                setInterval(nextSlide, 5500); // Cada 5,5 segundos
+            </script>
+
+        </header>
+        <div id="container" class="row">
+            <!-- Añadir filas necesarias con #div-row-->
+            <div class="div-row b" id="div-row-one">
+                <div class="sub-container">
+                    <div class="left hidden-left-scroll"><img src="/img/TWT_01.png" class="img_projects"></div>
+                    <div class="right hidden-right-scroll">
+                        <h2 class="title-body title-body-right ">Ayuntamiento de Camponaraya</h2>
+                        <p>Administración de la web municipal de este Ayuntamiento ubicado en la comarca de El Bierzo
+                            además del desarrollo de pequeñas web complementarias acorde a eventos o fiestas que
+                            se desarrollaban en el entorno municipal. También se llevaban a cabo pequeñas bases de datos
+                            centradas en diferentes aspectos de gestión interna municipal.
+                        </p>
+                    </div>
+                </div>
+            </div><!-- END proyecto Ayto de Camponaraya -->
+            <div class="div-row a" id="div-row-two">
+                <div class="sub-container">
+                    <div class="left hidden-left-scroll">
+                        <h2 class="title-body title-body-left">Gesconsulting Services</h2>
+                        <p>Empresa centrada en ofrecer una solución integral cubriendo una serie de servicios como los
+                            relacionados con el cumplimiento de la LOPD y la formación para la obtención de diferentes
+                            tipos de carnets profesionales.
+                            Además de ofrecer también la posibilidad del uso de una herramienta propia en forma de
+                            aplicación web diseñada para la gestión de bienes inmuebles, está aplicación estaba
+                            desarrollada con las principales tecnologías
+                            web del momento, su stack era principalmente Php/JS/MySQL/CSS.
+                        </p>
+                    </div>
+                    <div class="right  hidden-right-scroll">
+                        <img src="/img/TWT_01.png" class="img_projects">
+
+                    </div>
+                </div>
+            </div><!-- END Gesconsulting Services -->
+            <div class="div-row a" id="div-row-three">
+                <style>
+                </style>
+                <div class="sub-container">
+                    <div class="left hidden-left-scroll">
+                        <img src="/img/IO_01.png" class="img_projects title-body-left">
+                    </div>
+                    <div class="right  hidden-right-scroll">
+                        <h2 class="title-body">IO Systems</h2>
+                        <p>Empresa orientada y dedicada a las nuevas tecnologías, enfoncándose principalmente en el área
+                            de la informática, cubriendo para ello diferentes aspectos interrelacionados
+                            como los periféricos, las interconexiones de dispositivos en red y las tecnologías web.
+                            Destacando principalmente los periféricos (su venta, configuración
+                            y atención técnica), donde las impresoras y sus consumibles eran eje central. En cuanto a
+                            las redes la labor se centraba en la interconexión de diferentes dispositivos,
+                            especialmente en la conectividad inalámbrica. Las principales tecnologías web se
+                            fundamentaban en la pila JS/Php/MySQL/CSS/LESS y de aplicaciones construidas sobre ellas
+                            como son el CMS Wordpress o el e-commerce Woocommerce, sin obviar la configuración y/o gestión de los servidores
+                            necesarios para su desarrollo y despliegue.</p>
+
+                    </div>
+                </div>
+            </div><!-- END proyecto IO Systems-->
+
+            <div class="div-row b" id="div-row-four">
+                <div class="sub-container">
+                    <div class="left hidden-left-scroll">
+                        <h2 class="title-body title-body-right ">Traveling World Tours</h2>
+                        <p>Agencia de viajes centrada en organizar viajes y descubrir las bondades del estado insular de
+                            Santo Tomé y Principe ubicado el golfo de Guinean, en la parte central del Occidente
+                            Africano. Esta agencia organizaba los viajes, el alojamiento y una serie de interesantes
+                            actividades para conocer sus paisajes, gentes y tradiciones ofreciendo una experiencia
+                            completa para el viajero.
+                        </p>
+                    </div>
+                    <div class="right hidden-right-scroll"><img src="/img/TWT_01.png" class="img_projects"></div>
+
+                </div>
+            </div><!-- END proyecto Traveling World Tours -->
+            <div class="div-row a" id="div-row-five">
+                <div class="sub-container">
+                    <div class="left hidden-left-scroll">
+                        <img src="/img/TWT_01.png" class="img_projects">
+
+
+                    </div>
+                    <div class="right  hidden-right-scroll">
+                        <h2 class="title-body title-body-left">Bee Digital</h2>
+
+                        <p>Importante empresa cuya actividad se centra en proporcionar una plataforma de tecnología y
+                            servicios de marketing digital a pequeños negocios y autónomos. De esta forma la empresa
+                            aporta a sus clientes
+                            soluciones fáciles y eficientes para cumplir su objetivo. Cubre prácticamente todas las
+                            áreas, dentro del área de páginas web se llevan a cabo los diseños, maquetaciones e
+                            implementaciones de las páginas web y tiendas online de los miles
+                            de clientes que disfrutan de sus servicios.
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+        </div><!-- END BeeDigital -->
+        <!-- END de los #div-row -->
+        <script type="text/javascript" src="assets/js/lightbox.js"></script>
+        <footer class="row"><img src="https://borjabasventin.es/cms/wp-content/themes/bbv_2023/assets/img/logo.png"></footer>
+        <div id="footer-ending"></div>
+    </div>
+    <script type="text/javascript" src="assets/js/observer-scroll.js"></script>
+</body>
+</html>

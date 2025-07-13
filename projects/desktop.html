@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Borja Bas Ventín">
+    <meta name="copyright" content="Borja Bas Ventín">
+    <script defer type="text/javascript" src="project-desktop/assets/js/desktop-menu.js"></script>
+    <script defer type="text/javascript" src="project-desktop/assets/js/ajax-function.js"></script>
+    <title>BBV desktop APP</title>
+    <link rel="stylesheet" href="project-desktop/assets/css/desktop-structure.css">
+    <link rel="stylesheet" href="project-desktop/assets/css/desktop-effects.css">
+    <style>
+
+    </style>
+</head>
+<body>
+    <div id="wrapper">
+        <div id="desktop">
+            <div class="icons left">
+                <table>
+                    <tr>
+                        <td style="text-align: center;">
+                            <img src="project-desktop/assets/img/computer.png" style="width:90px;">
+                            <br>Mi Pc<br><br>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="text-align: center;">
+                            <img src="project-desktop/assets/img/papelera.png" style="width:80px;"><br>
+                            Papelera<br><br>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="text-align: center;">
+                            <img src="project-desktop/assets/img/C.png" style="width:80px;"><br>
+                            Disco<br><br>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="text-align: center;">
+                            <img src="project-desktop/assets/img/CD-ROM.png" style="width:80px;"><br>
+                            Lector CD<br><br>
+                        </td>
+                    </tr>
+                </table>
+            
+            </div>
+            <div class="icons right">
+                <table>
+                    <tr>
+                        <td style="text-align: center;">
+                            <img src="project-desktop/assets/img/USB.png" style="width:90px;">
+                            <br>USB<br><br>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="text-align: center;">
+                            <a href="#icon-two" title="Ventana con información" class="thumbs"><img src="project-desktop/assets/img/pdf.png" style="width:80px;"></a><br>
+                            Info
+                        </td>
+                    </tr>
+                    </table>
+                <!-- MODAL LINK -->
+            </div>
+        </div><!-- END desktop-->
+        <!-- BOTTOM BAR MENU -->
+        <div class="bottom-bar">
+            <!-- Main menu Button -->
+            <div class="icon-menu">Menú</div>
+            <!-- Options List -->
+            <div class="main-menu-options">
+                <ul class="main-list">
+                    <li><a href="#" class="portfolio-call">Portfolio</a>
+                        <div class="portfolio-options">
+                            <ul class="sub-main-list">
+                                <li><a href="#icon-traveling" id="portfolio-one" class="portfolio-call twt"> Traveling
+                                        World Tours</a></li>
+                                <li><a href="#icon-io" id="portfolio-two" class="portfolio-call io"> IO Systems</a></li>
+                                <li><a href="http://borjabasventin.es" id="portfolio-three" class="portfolio-call io">Otros proyectos</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li><a href="#modal-about-me" class="portfolio-call" id="about-me">Sobre mí</a></li>
+                    <li><a href="#" id="contacto" class="portfolio-call">Contacto</a></li>
+                </ul>
+            </div>
+            <!-- date - time layer -->
+            <div class="date-time">
+                <div class="clock">
+                    <script type="text/javascript">
+                        // document.write(d.getHours()+":"+d.getMinutes()+":"+d.getSeconds());  
+                        function clock() {
+                            let d = new Date();
+                            let hours = d.getHours();
+                            let minutes = d.getMinutes();
+                            let seconds = d.getSeconds();
+                            let timeClock = hours + ":" + minutes + ":" + seconds;
+                            document.getElementsByClassName('clock')[0].innerHTML = timeClock;
+                        };
+                        clock();
+                        setInterval(clock, 1000);
+                    </script>
+                </div>
+                <div class="calendar">
+                    <script type="text/javascript">
+                        let d = new Date();
+                        let date = d.getDate() + "/" + (d.getMonth() + 1) + "/" + d.getFullYear();
+                        document.getElementsByClassName('calendar')[0].innerHTML = date;
+                    </script>
+                </div>
+            </div>
+        </div><!-- END BOTTOM BAR MENU-->
+    </div><!-- END wrapper-->
+    <!-- MODAL WINDOW wid id = icon-one -->
+    <div id="modal-about-me" class="modal-container">
+        <div class="modal-pre-content-window">
+            <div class="modal-controls">
+                <div class="modal-close"><a href="#">Cerrar</a></div>
+            </div>
+            <div class="modal-content">
+                <h1 class="title-modal">Sysadmin & web developer</h1>
+                <br><br>
+                <div class="modal-data" id="ajax-one"></div>
+                <p style="text-align:center;">[ Iría CV cargado mediante Ajax clásico ]</p>
+                <script type="text/javascript">
+                    document.getElementById('about-me').addEventListener('click', () => {
+                        // Método clásico: let ajax = new XMLHttpRequest; 
+                        // Método con 1 funcion:
+                        let ajax = new makeAjaxObject();
+                        console.log(ajax);
+                        ajax.open('GET', 'assets/modals-texts/cv.html', true);
+                        ajax.onreadystatechange = () => {
+                            if (ajax.readyState == 4 && ajax.status == 200) {
+                                document.getElementById("ajax-one").innerHTML = ajax.responseText;
+                            }
+                        }
+                        ajax.send();
+                    });
+
+                </script>
+            </div>
+        </div>
+    </div>
+    <!-- MODAL WINDOW wid id = icon-two -->
+    <div id="icon-two" class="modal-container">
+        <div class="modal-content">
+            <div class="modal-close"><a href="#">Cerrar</a></div>
+            <div class="modal-data">
+                <h1 class="title-modal">Biografía</h1>
+                <br><br>
+                Aquí iría mi biografía y CV para aportar información sobre mi formación, experiencia y skills.
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

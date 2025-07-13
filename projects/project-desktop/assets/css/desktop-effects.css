@@ -1,0 +1,144 @@
+/*
+        effects.css
+        Project: Desktop web
+        Author: Borja Bas Ventín
+*/
+/*************************************************************************************/
+/*                           Modal container solo CSS                                */
+/*************************************************************************************/
+
+.modal-container {
+    /*
+    OPCION 1:
+    ========
+    display:none;
+    [+ JAVASCRIPT]
+    OPCION 2:
+    =========
+    POINTER-EVENTS
+    :TARGET
+    OPACITY
+    */
+    pointer-events: none;
+    opacity: 0;
+    /*  FIN OPCIÓN 2 */
+    position: absolute;
+    z-index: 100;
+    top:5rem;
+    left:50%;
+    transform: translateX(-50%);
+    width: auto;
+    height: auto;
+    overflow: auto;
+    /* background-color: rgba(0,0,0,0.3);*/
+    /*transition: opacity 1s ease;*/
+    border: 1px solid black;
+}
+
+.modal-container:target {
+    pointer-events: auto;
+    opacity: 1;
+}
+
+.modal-content{
+    width:100%;
+    border:2px solid black;
+    border-radius:5px;
+    background:#f3f3f3;
+    color:#222;
+    padding:1.5rem;
+
+}
+.title-modal{
+    text-align:center;
+    padding:1rem 0 1rem 0;
+}
+.modal-close {
+    width: auto;
+    height: auto;
+    color: #fff;
+    background: #0F171E;
+    float: right;
+    padding: 1rem;
+    margin-right: 0rem;
+    text-align: center;
+}
+
+.modal-close a:link {
+    text-decoration: none;
+    color: #fff;
+}
+
+.modal-close a:visited {
+    text-decoration: none;
+    color: #fff;
+}
+
+.modal-close a:hover {
+    text-decoration: none;
+    color: #e9bd15;
+}
+
+.modal-close a:active {
+    text-decoration: none;
+    color: #fff;
+}
+
+
+
+/*  Layer to upload ajax files */
+.modal-data {
+    width: 100%;
+    height: auto;
+
+}
+
+/*********************************************************************************************************
+                             RESPONSIVE - MOBILE VERSION       
+*********************************************************************************************************/
+
+
+@media all and (max-width:600px) {
+    .modal-container {
+        width: 100%;
+    }
+
+    .modal-content {
+        width: 100%;
+    }
+
+}
+
+@media (max-height: 600px) {
+
+    .date-time {
+        padding: 0.2rem 0;
+        /* Reduce aún más el padding */
+    }
+
+    .clock,
+    .calendar {
+        font-size: 0.8rem;
+        /* Reduce más el tamaño de fuente */
+    }
+
+}
+
+@media (orientation: landscape) and (max-height: 800px) {
+
+    .date-time {
+        flex-direction: row;
+        /* Muestra hora y fecha en línea */
+        gap: 0.5rem;
+        /* Espacio entre hora y fecha */
+        align-items: center;
+        flex-shrink: 0;
+    }
+
+    .clock,
+    .calendar {
+        flex-shrink: 0;
+        height: auto;
+        /* Elimina el height fijo */
+    }
+}
