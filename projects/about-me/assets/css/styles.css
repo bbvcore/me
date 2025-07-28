@@ -1,0 +1,437 @@
+/************************************************************************************
+                        DESKTOP VERSION & RESPONSIVE VERSION
+
+                            Author: Borja Bas Ventin
+                            URL: www.borjabasventin.es
+************************************************************************************/
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+}
+html {
+    scroll-behavior: smooth;
+  }
+:root{
+    --bg-bar:#3b4854;
+    --full:100%;
+    --bg-body:#6C7985;
+    --bg-footer:#3b4854;
+    /*
+    Colores en la tonalidad:
+        #3B4854 (Plomizo Oscuro)
+        #47515E
+        #607788
+        #6C7985 (Plomizo Claro)
+        #7A8794;
+    Colores complementarios:
+        #D18C6B
+        #E2A987
+        #B86A4C   
+    */
+}
+@font-face {
+font-family: "Karmatic Arcade";
+src: url("/me/assets/fonts/ka1.ttf");
+}
+body{
+    font-family:'Open Sans',sans-serif;
+    font-size:100%;
+    background:var(--bg-body);
+    overflow-x:hidden;
+
+}
+#wrapper{
+    margin:0;
+    padding:0;
+}
+
+header{
+    width:var(--full);
+    height:70px;
+    background:var(--bg-bar);
+    position:fixed;
+    top:0;
+    line-height:40px;
+    z-index:32;
+    overflow:hidden;
+    border-bottom:2px solid black;
+}
+header a:link, header a:visited, header a:hover, header a:active{color:#fff;}
+.logo{
+    font-family:"Karmatic Arcade",sans-serif;
+    font-size:1.8rem;
+    color:#fff;
+    /*-webkit-text-stroke-color:#fff;
+    -webkit-text-stroke-width:5px;
+    -webkit-text-fill-color:#4286b4;
+    filter:drop-shadow(1px 1px#4286b4);*/
+    text-shadow: 5px 5px #a3ccdc;
+    padding-left:.7rem;
+    padding-top:.9rem;
+    padding-right:1rem;
+    border:0px solid red;
+    width:auto;
+}   
+nav{
+    display:flex;
+    justify-content:space-between;
+    margin:0 auto;
+}
+
+a:link.logo{text-decoration:none; color:white;}
+a:visited.logo{text-decoration:none; color:white;}
+a:hover.logo{text-decoration:none; color:white;}
+a:active.logo{text-decoration:none; color:white;}
+/****************************************/
+/*  MENU WEB SUPERIOR - DESKTOP VERSION */
+/****************************************/
+.nav-main-top{
+    list-style-type: none;
+    display:flex;   
+    flex-direction:row;
+    padding-right:24px;
+}
+.nav-main-top-item{
+    font-size:18px;
+}
+.nav-main-top-link{
+    color:white;
+    text-decoration:none;
+    line-height:70px;
+    font-size:15px;
+    text-transform:uppercase;
+    padding:7px 9px; 
+    
+    /* Filtro anti aliasing */ 
+    width:max-content; 
+    border-radius:5px;
+    transition: ease 0.5s;
+}
+.nav-main-top-about-me{
+    color:white;
+    text-decoration:none;
+    line-height:70px;
+    font-size:15px;
+    text-transform:uppercase;
+    padding:7px 9px; 
+    
+    /* Filtro anti aliasing */ 
+    width:max-content; 
+    border-radius:5px;
+    transition: ease 0.5s;
+}
+.nav-main-top-link:hover, .nav-main-top-about-me:hover{
+    background:#3b4854;
+    color:#fff;
+}
+.toggle{
+    background:none;
+    font-size:20px;
+    width:50px;
+    height:50px;
+    line-height:50px;
+    position:absolute;
+    height:100%;
+    top:0;
+    right:0;
+    border:0;
+    display:none;
+}
+.icon{
+    color:white;
+    padding:0;
+}
+/*************************************************************************************/
+/*                                RESPONSIVE MOBILE                                  */
+/*************************************************************************************/
+/*  WEB RESPONSIVO - MOBILE VERSION */
+@media all and (max-width:768px){
+.toggle{
+    display:block;  
+}
+.nav-main-top{ 
+    display:flex;
+    width:100%;
+    flex-direction:column;
+    position:fixed;
+    left:-100%; /* Ocultar menÃº*/
+    top:70px;
+    background:#3b4854;
+    align-items:center;
+    padding:20px 0;
+    height:calc(100% - 60px);
+    overflow-y:auto;
+    transition:ease .2s;
+}
+.nav-main-visible{
+    left:0;
+}
+}
+/****************************/
+/*      HAMBURGUESA         */
+/****************************/
+/* MenÃº hamburguesa realizado con CSS */
+/* Clase contenedora del icono */ 
+.burguer {
+    display: flex;
+    flex-direction: column; 
+    justify-content: center; 
+    align-items: center; 
+    cursor: pointer;
+    transition: 0.4s ease-out;
+    padding-top:0px;
+    margin-top:-8px;
+    }
+/* Transformaciones de las lÃ­neas */
+    .lineOne,
+    .lineTwo,
+    .lineThree {
+    width: 30px;
+    height: 5px;
+    background-color:#d3d3d3;
+    /* DuraciÃ³n de la transiciÃ³n y tipo de transiciÃ³n */
+    transition: 0.4s ease-out;
+    margin:3px;
+    }
+    /* RotaciÃ³n de la lÃ­nea superior */
+    .change .lineOne {
+    transform: rotate(45deg) translate(4px,3px);
+    position: absolute;
+    }
+    /* OcultaciÃ³n de la lÃ­nea del medio */
+    .change .lineTwo {
+    opacity: 0;
+    }
+    /* RotaciÃ³n de la lÃ­nea inferior */
+    .change .lineThree {
+    transform: rotate(-45deg)  ;
+    }     
+
+
+.menu{
+    padding-right:2rem;
+    text-decoration:none;
+    text-align:right;
+    text-transform: uppercase;
+    font-weight:bold;
+}  
+.menu:hover{
+    color:#a3ccdc;
+}
+/*** DEVELOP SPACE */
+#body-header{
+    margin-top:70px;
+    width:100%;
+    height:20rem;
+}
+.body-center{
+    display:flex;
+    justify-content:center;
+}
+.body-center .right{
+    justify-content:flex-start;
+    width:50%;
+    height:20rem;
+
+}
+.body-center .left{
+    justify-content:flex-end;
+    width:50%;
+    height:20rem;
+
+}
+/*** DEVELOP SPACE */
+
+#body-container{
+    margin:0 auto;
+    margin-top:225px;
+    width:80rem;
+    display:flex;
+    align-items: center ;
+    justify-content: space-between ;
+} 
+
+.left-home{
+    display: flex;
+    flex-direction:column;
+    flex-grow: 0;
+    flex-shrink: 0;
+    align-items: center; 
+    justify-content: center;
+    flex-basis:30%;
+    text-align:center;
+}
+.center-home{
+    display: flex;
+    flex-grow: 0;
+    flex-shrink: 0;
+    flex-basis:40%;
+    justify-content: center;
+    align-items: center;
+    width:40%;
+}
+.right-home{
+    display: flex;
+    flex-direction:column;
+    flex-grow: 0;
+    flex-shrink: 0;
+    align-items: center; 
+    justify-content: center;
+    flex-basis:30%;
+    text-align:center;
+}
+.title-skills{ 
+    font-size: 32pt; /* Tamaño del texto */
+    font-weight: bold; /* Hace la fuente más gruesa */
+    color: #d3d3d3; /* Color del texto */
+       /*
+      -webkit-text-stroke: 3px black; /* borde negro 
+      text-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5); /* sombra
+      */
+}
+
+
+.description-skills{
+    font-size:12pt;
+}
+.draw{
+    width:100%;
+    max-width:800px;
+}
+.draw img{
+    width:100%;
+    min-width:400px;
+    height:auto;
+    display:block;
+    object-fit: contain;
+}
+
+
+.clear{
+    clear:both;
+    width:var(--full);
+    height:1px;
+}
+
+
+/*******************************
+         Barra navegación
+********************************/
+.browser-bar{
+    background:#d3d3d3;
+    height:2rem;
+    width:100%;
+    border-bottom:0px solid #222;
+}
+
+
+.link:link{ text-decoration:none;}
+.link:visited{ text-decoration:none;}
+.link:hover{ text-decoration:none; background:#a3ccdc;color:#333; font-weight:bold;}
+.link:active{ text-decoration:none;}
+
+
+
+.bar{
+    width:90%;
+    height:30px;
+    background:#d3d3d3;
+    clear:both;
+    margin:0 auto;
+}
+#content img{
+    width:90%;
+    margin:0 auto;
+    box-shadow: 10px 10px 5px  #777;
+}
+
+.container-bar{
+    width:100%;
+    height:100%;
+    line-height:30px;
+}
+        
+        
+/*      FOOTER      */
+footer{
+    width:var(--full);
+    height:70px;
+    background:var(--bg-footer);
+    line-height:70px;
+    overflow:hidden;
+    margin-top:15em;
+    border-top:2px solid black;
+}
+
+
+/************************************************************************************
+                               MOBILE VERSION
+************************************************************************************/
+@media all and (max-width:1282px){
+    #wrapper{
+        display:block;
+    }
+    #body-container{
+        margin-top:175px;
+        width:100%;
+    }
+  
+}  
+
+@media all and (max-width:966px){
+    #body-container{
+        flex-direction:column;
+        width:100%;
+        margin-top:125px;
+    
+    }
+
+    .left-home, .right-home {
+        flex-basis: auto; /* Tamañao del contenido */
+        width: 100%; /* flax-basis toma de referencia el width y height  si se definen */
+        text-align: center;
+        margin: 20px 0;
+    }
+
+    .center-home {
+        flex-basis: auto;
+        display: flex; /* Para aplicar a la imagen */
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+    }
+    
+    .draw {
+        max-width: 100%;
+        display: flex;
+        justify-content: center;
+    }
+    
+    .draw img {
+        width: 50%;  /* Limitar imagen pequeña */
+        max-width: 200px; /* Limitar  imagen demasiado grande */
+        height: auto;
+        object-fit: contain; /* La img se adapta al contenedor*/
+        align-self: center; /* Eje Y*/
+    }
+}
+    
+@media all and (max-width:768px){
+    .logo{
+        padding-left:.1rem;
+    }
+
+}
+@media all and (max-width:620px){
+    .window{
+        width:90%;
+    }
+}
+@media all and (max-width:320px){
+    .logo{
+        padding-left:.1rem;
+        padding-top:.5rem;
+    }
+ 
+}

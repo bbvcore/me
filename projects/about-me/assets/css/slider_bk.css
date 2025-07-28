@@ -1,0 +1,79 @@
+ /* ESTILOS DEL SLIDER - PRUEBAS PREVIAS A INCORPORAR ESTE CÓDIGO A UNA HOJA CSS */
+    
+/* Ajustamos el slider para que use solo el 50% del ancho que le corresponde */
+.slider-container {
+    position: relative;
+    width: 100%; /* Se ajusta al ancho del contenedor padre (50% del viewport) */
+    height: calc(100vh - 10rem ); /* Se resta la altura del nav y footer */    
+    overflow: hidden;
+    margin-bottom: 0rem; 
+    border:0px solid red;
+}
+
+.slides {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+    height: 100%;
+}
+
+.slide {
+    min-width: 100%; /* Se ajusta al ancho del contenedor del slider */
+    height: 100vh;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    box-sizing:border-box;
+
+}
+.slide:nth-child(1) {
+    background-image: url('https://www.borjabasventin.net/wp-content/themes/bbv_2023/assets/img/code.jpg');
+}
+
+.slide:nth-child(2) {
+    background-image: url('https://www.borjabasventin.net/wp-content/themes/bbv_2023/assets/img/design.jpg');
+}
+
+.slide:nth-child(3) {
+    background-image: url('https://www.borjabasventin.net/wp-content/themes/bbv_2023/assets/img/computers.jpg');
+}
+
+.text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateY(-50%);
+    width: 80%;
+    height: auto;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    padding: 20px;
+    font-size: 2rem;
+    text-align: center;
+    box-sizing:border-box;
+}
+
+.prev-slider, .next-slider {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 2rem;
+    color: white;
+    padding: 10px;
+    background-color: rgba(0, 0, 0, 0.5);
+    cursor: pointer;
+}
+
+.prev-slider {
+    left: 10px;
+}
+
+.next-slider {
+    right: 10px;
+}
+
+@media (max-width: 600px) {
+    .prev-slider, .next-slider {
+        font-size: 1.5rem;
+    }
+
+}

@@ -1,0 +1,94 @@
+/*******************************
+    POP UP  WINDOW  
+    FULL LAYER as Background
+********************************/
+.window-popup{
+    position:fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left:0;
+    background:rgba(0,0,0,0.5);
+    z-index:9999;
+    opacity:0;
+    /* Oculta por defecto*/
+    /* Mostrar poco a poco */
+    transition: opacity 400ms ease;
+    /* Sin eventos del ratÃ³n */ 
+    pointer-events: none;
+    overflow:auto;
+}
+.window-popup:target{
+     /* se activa con el ancla del enlace (#) */
+    opacity:1;
+    /* Con eventos del ratÃ³n */
+    pointer-events: auto;
+}
+#window-container-legal, #window-container-privacy,#window-container-cookies{
+    width:600px;
+    border:5px solid #000;
+    border-radius:5px;
+    background:#f3f3f3;
+    position:relative;
+    top:15%;
+    left:50%;
+    margin-left:-300px;
+    padding:.5rem;
+    color:#333;
+}
+#window-container-portfolio{
+    width:992px;
+    border:5px solid #000;
+    border-radius:5px;
+    background:#f3f3f3;
+    position:relative;
+    top:15%;
+    left:50%;
+    margin-left:-496px;
+    padding:.5rem;
+    color:#333;
+    font-weight: bold;
+}
+#close-01,#close-02,#close-03{
+    float:right;
+    margin-top:1rem;
+}
+#content-legal,#content-privacy,#content-cookies{
+    margin-top:0rem;
+    padding:1rem;
+}
+.close{
+    width:auto;
+    height:auto;
+    padding:1rem;
+    text-transform:uppercase;
+    text-decoration:none;
+    color:#222;
+    background:#a3ccdc;
+    border:0;
+    border-radius:5px;
+    font-weight: bold;
+}
+
+.close:link,.close:visited,.close:active{
+    color:#222;
+    background:#a3ccdc;
+}
+
+
+.close:hover{
+    background:#222;
+    color:#a3ccdc;
+    font-weight: bold;
+}
+
+@media all and (max-width:1000px){
+    #window-container-legal, #window-container-privacy,#window-container-cookies{
+        width:90%;
+        margin-left:-45%;
+    }
+
+    #close-01,#close-02,#close-03{
+        margin-top:2.2rem;
+    }
+}

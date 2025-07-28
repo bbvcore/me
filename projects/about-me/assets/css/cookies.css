@@ -1,0 +1,69 @@
+
+        #cookiesBanner{
+            border:1px solid #333;
+            position:fixed;
+            bottom:0;
+            width:100%;
+            text-align:center;
+            background:#333;
+            color:#fff;
+            padding-top:.5rem;
+            padding-bottom:.5rem;
+	    z-index:1200;
+	    
+        }
+        /*
+        Con css solo display:none (ventana)
+        Apertura con botón href="#ventana" (ancla)
+        Ventana modal : pointer-events:none (para que no abra por defecto)
+        ventana:target y usar pointer-events:auto; para mostrarla
+        */
+        #windowSettings,#noAccept{
+            /* 
+            display:block NO se podía animar, pero ahora sí
+            antes había que usar visibility
+            */
+            display:none;
+            width:400px;
+            border:5px solid #333;
+            animation: mostrarWindow 0.5s;
+            position:absolute;
+            left:50%;
+            margin-left:-200px;
+            top:20%;
+            border-radius: 5px;
+            padding:1rem;
+            background:#f3f3f3;
+	    z-index:1500;
+        }
+        #closeSettings,#closeAccept{
+            font-size:1.5rem;
+            float:right;
+        }
+        #close a:link{text-decoration:none;}
+        #close a:visited{}
+        #close a:hover{}
+        #close a:active{}
+
+        .essentials{
+            padding:.5rem 0 .5rem 0;
+        }
+        .cookiesText a:link {text-decoration:none; color:#aaccdd;}
+        .cookiesText a:visited {text-decoration:none; color:#aaccdd;}
+        .cookiesText{
+            padding:.5rem;
+        }
+        .active{
+            color:#4286b4;
+        }
+        .btnCookies{
+            background:#acccdd;
+            color:#111;
+            border:2px solid #111;
+            padding:.3rem;
+            font-weight: 600;
+        }
+        /* Animación */
+        @keyframes mostrarWindow {
+            from { opacity:0; }  to { opacity:1; }
+        }

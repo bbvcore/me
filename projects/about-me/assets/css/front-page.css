@@ -1,0 +1,630 @@
+@charset "UTF-8";
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  height: 100%;
+}
+
+body {
+  font-family: "Open Sans", sans-serif;
+  font-size: 100%;
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+  background: #d3d3d3;
+}
+
+/****************************************/
+/*  MENU WEB SUPERIOR */
+/****************************************/
+nav {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  margin: 0 auto;
+  background: #333;
+}
+
+.nav-main-top {
+  display: flex;
+  width: 50%;
+  flex-direction: column;
+  position: fixed;
+  left: -50%; /* Ocultar menu*/
+  top: 80px;
+  background: #333;
+  align-items: center;
+  padding: 20px 0;
+  height: calc(100% - 60px);
+  overflow-y: auto;
+  transition: ease 0.2s;
+  list-style: none;
+}
+
+.nav-main-visible {
+  /* Clase para mostrar el menú oculto */
+  left: 0%;
+  z-index:9000;
+}
+
+.nav-main-top-item {
+  font-size: 18px;
+}
+
+.nav-main-top-link {
+  color: white;
+  text-decoration: none;
+  line-height: 70px;
+  font-size: 15px;
+  text-transform: uppercase;
+  padding: 7px 9px;
+  /* Filtro anti aliasing */
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
+  border-radius: 5px;
+  transition: ease 0.5s;
+}
+
+.nav-main-top-link:hover {
+  background: #94bee5;
+  color: #fff;
+}
+
+.toggle { /* Clase que contiene el CSS Burguer*/
+  background: none;
+  font-size: 20px;
+  width: 50px;
+  height: auto;
+  position: absolute;
+  top: 0;
+  right: 50%;
+  border: 0;
+  display: block;
+  margin-top: 30px;
+  margin-right: 10px;
+}
+
+.logo {
+  margin-top: 22px;
+  margin-left: 5px;
+}
+
+.me {
+  margin: 0 auto;
+}
+
+.me img {
+  width: 600px;
+}
+
+.formation {
+  text-shadow: 3px 4px 5px #000;
+  color: #fff;
+  font-size: 4rem;
+  text-align: center;
+  font-weight: bold;
+}
+
+.excerpt {
+  width: 100%;
+  height: auto;
+}
+
+.button {
+  width: 100%;
+  height: auto;
+  padding: 2rem 0 1rem 0;
+}
+
+.btn {
+  padding: 0.5rem 1rem 0.5rem 1rem;
+  background: #94bee5;
+  color: #fff;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.btn:link {
+  background: #94bee5;
+  color: #fff;
+}
+
+.btn:visited {
+  background: #94bee5;
+  color: #fff;
+}
+
+.btn:hover {
+  background: #222;
+  color: #94bee5;
+}
+
+.btn:active {
+  background: #94bee5;
+  color: #fff;
+}
+
+/****************************/
+/*      HAMBURGUESA         */
+/****************************/
+/* Menu hamburguesa realizado con CSS */
+/* Clase contenedora del icono */
+.burguer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition: 0.4s ease-out;
+  padding-top: 0px;
+  margin-top: -8px;
+}
+
+/* Transformaciones de las li­neas */
+.lineOne,
+.lineTwo,
+.lineThree {
+  width: 30px;
+  height: 5px;
+  background-color: #f3f3f3;
+  transition: 0.4s ease-out;
+  margin: 3px;
+}
+
+.change .lineOne {
+  transform: rotate(45deg) translate(4px, 3px);
+  position: absolute;
+}
+
+.change .lineTwo {
+  opacity: 0;
+}
+
+.change .lineThree {
+  transform: rotate(-45deg);
+}
+
+#wrapper {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-column-gap: 0;
+  grid-row-gap: 0;
+  grid-auto-rows: 100vh;
+  overflow: hidden;
+}
+
+#grid-left {
+  display: grid;
+  grid-template-rows: 5rem auto 5rem;
+  background-color: #c3c3c3;
+}
+
+nav {
+  height: 5rem;
+  border: 0px solid #222;
+}
+
+#grid-right {
+  display: grid;
+  grid-template-rows: 5rem auto;
+  overflow-y: scroll;
+  background-color: #f3f3f3;
+}
+
+#img-me {
+  width: 100%;
+  height: auto;
+  text-align: center;
+  margin-top: 5rem;
+  margin-bottom: 3rem;
+}
+
+/*footer {
+  margin-top: auto;
+  width: 100%;
+  height: 2.5rem;
+  border: 0px solid #222;
+  text-align: center;
+  background: #222;
+  padding: 0.5rem;
+}*/
+footer {
+  position: relative;
+  width:100%;
+  padding: 1.5rem;
+  z-index: 1;
+  background: #222222;
+  text-align: center;
+  box-sizing: border-box;
+  border:0px solid blue;
+}
+
+footer a:link {
+  text-decoration: none;
+  color: #fff;
+}
+
+footer a:visited {
+  text-decoration: none;
+  color: #fff;
+}
+
+footer a:hover {
+  text-decoration: none;
+  color: #aaccdd;
+}
+
+footer a:active {
+  text-decoration: none;
+  color: #fff;
+}
+
+#web {
+  width: 100%;
+  height: auto;
+  text-align: center;
+}
+
+#sysadmin {
+  width: 100%;
+  height: auto;
+  margin: 0 auto;
+}
+
+.banner {
+  border: 0px solid #222;
+}
+
+.content-banner {
+  width: 80%;
+  margin: 0 auto;
+  border: 0px solid #000;
+  height: 2rem;
+}
+
+.posts {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  padding-left: 2rem;
+}
+
+.post {
+  border: #777;
+  color: #222;
+  margin: 2rem;
+  flex-basis: 42%;
+  height: auto;
+  overflow: hidden;
+  border-radius: 5px;
+  background: #fff;
+}
+
+a:link.logo {
+  text-decoration: none;
+  color: white;
+}
+
+a:visited.logo {
+  text-decoration: none;
+  color: white;
+}
+
+a:hover.logo {
+  text-decoration: none;
+  color: white;
+}
+
+a:active.logo {
+  text-decoration: none;
+  color: white;
+}
+
+.category a:link {
+  text-decoration: none;
+  color: #fff;
+}
+
+.category a:visited {
+  text-decoration: none;
+  color: #fff;
+}
+
+.category a:hover {
+  text-decoration: none;
+  color: #000;
+}
+
+.category a:active {
+  text-decoration: none;
+  color: #fff;
+}
+
+.pagination {
+  width: 90%;
+  margin: 0 auto;
+  padding-bottom: 5rem;
+}
+
+.pagination ul {
+  width: 100%;
+  list-style-type: none;
+  text-align: center;
+  padding: 8px 15px;
+  list-style: none;
+  background-color: #fff;
+  border-radius: 4px;
+  font-weight: bold;
+  box-shadow: 0 0px 4px #dfdfdf;
+  margin-bottom: 5rem;
+}
+
+.pagination ul li {
+  display: inline;
+}
+
+.pagination ul li a {
+  text-decoration: none;
+}
+
+a:link {
+  color: #a3ccdc;
+}
+
+a:visited {
+  color: #a3ccdc;
+}
+
+a:hover {
+  color: #44454b;
+}
+
+a:active {
+  color: #a3ccdc;
+}
+
+/*  CARD POSTS*/
+.card {
+  width: 100%;
+  margin: 0 auto;
+  height: 40rem;
+}
+
+.card-img {
+  width: 100%;
+  height: 14rem;
+  margin-bottom: 2rem;
+  border: 0px solid black;
+}
+
+.card-img img {
+  width: 100%;
+  height: 100%;
+}
+
+.card-tag {
+  height: 3rem;
+  padding-left: 1rem;
+}
+
+.category {
+  padding: 0.5rem;
+  text-transform: uppercase;
+  color: white;
+  background: #94bee5;
+  width: auto;
+  height: auto;
+  font-weight: bold;
+}
+
+.card-title {
+  height: 3rem;
+  text-transform: uppercase;
+  text-align: center;
+  font-weight: bold;
+  padding: 0.5rem;
+}
+
+.card-text {
+  height:auto;
+  max-height:15rem;
+  padding: 0.5rem 1rem 1rem 1rem;
+}
+
+.space {
+  width: 100%;
+  height: 2rem;
+  clear: both;
+}
+
+@media all and (max-width: 1800px) {
+  .post {
+    flex-basis: 40%;
+    height: auto;
+    overflow: hidden;
+    border:0px solid orange;
+  }
+ .card{
+	/*min-height:38rem;*/
+	max-height:auto;
+}
+
+}
+
+@media all and (max-width: 1675px) {
+  .post {
+    flex-basis: 40%; /* width single post (posts is the container of the post) */
+    height: auto;
+    overflow: hidden;
+    border:red 0px solid;
+  }
+  .me img {
+    width: 60%;
+  }
+.card-text{
+ max-height:25rem;	
+}
+ .card{
+	min-height:44rem;
+	max-height:auto;
+}
+@media all and (max-width: 1450px) {
+ .card{
+	min-height:46rem;
+	max-height:auto;
+}
+  .post {
+    flex-basis: 38%;
+    height: auto;
+    overflow: hidden;
+    border:solid 0px yellow;
+  }
+
+}
+}
+@media all and (max-width: 1358px) {
+  .posts {
+    padding-left: 0;
+  }
+  .post {
+    flex-basis: 90%;
+    margin: 0 auto;
+    margin-top: 2.5rem;
+    margin-bottom: 2.5rem;
+    height: auto;
+    overflow: hidden;
+  }
+ .card{
+	min-height:38rem;
+	max-height:auto;
+}
+
+}
+@media all and (max-width: 1064px) {
+  #wrapper {
+    display: block;
+    width: 100%;
+  }
+  .toggle {
+    right: 0;
+  }
+  .nav-main-top {
+    width: 100%;
+    left: -100%;
+  }
+  .nav-main-visible {
+    left: 0%;
+  }
+  #grid-left, #grid-right {
+    display: block;
+    width: 100%;
+  }
+  .post {
+    flex-basis: 42%;
+    height: auto;
+    overflow: hidden;
+  }
+  #left-body {
+    /* Si no había slider con img de background, se usaba un padding-bottom:5rem*/
+    padding-bottom: 0rem;
+  }
+ .card{
+	min-height:43rem;
+	max-height:auto;
+}
+
+}
+@media all and (max-width: 780px) {
+  .post {
+    flex-basis: 43%;
+    height: auto;
+    overflow: hidden;
+  }
+  .formation {
+    font-size: 3rem !important;
+  }
+ .card{
+	min-height:45rem;
+	max-height:auto;
+}
+}
+@media all and (max-width: 650px) {
+  .post {
+    flex-basis: 90%;
+    margin: 0 auto;
+    margin-top: 2.5rem;
+    margin-bottom: 2.5rem;
+    height: auto;
+    overflow: hidden;
+  }
+
+}
+@media all and (max-width: 650px) {
+  .post {
+    flex-basis: 90%;
+    margin: 0 auto;
+    margin-top: 2.5rem;
+    margin-bottom: 2.5rem;
+    height: auto;
+    overflow: hidden;
+  }
+  .formation {
+    font-size: 1.8rem !important;
+  }
+ .card{
+	min-height:42rem;
+	max-height:auto;
+}
+}
+@media all and (max-width: 350px) {
+ .card{
+	min-height:49rem;
+	max-height:auto;
+}
+}
+@media all and (max-width: 250px) {
+ .card{
+	min-height:57rem;
+	max-height:auto;
+} 
+}
+@media all and (max-width: 225px) {
+ .card{
+	min-height:63rem;
+	max-height:auto;
+}
+@media all and (max-width: 200px) {
+ .card{
+	min-height:68rem;
+	max-height:auto;
+}
+@media all and (max-width: 150px) {
+ .card{
+	min-height:77rem;
+	max-height:auto;
+}
+@media all and (max-width: 125px) {
+ .card{
+	min-height:90rem;
+	max-height:auto;
+}
+}
+@media all and (max-width: 100px) {
+ .card{
+	min-height:108rem;
+	max-height:auto;
+}
+}
+
+
+@media all and (max-width: 1000px) {
+  .nav-main-top {
+    z-index: 9;
+  }
+}/*# sourceMappingURL=front-page.css.map */
